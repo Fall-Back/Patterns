@@ -64,6 +64,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Tab
     
     </main>
     
+    <footer>
+        <p>
+            <a href="#">Top</a>
+        </p>
+    </footer>
 </body>
 </html>
 ```

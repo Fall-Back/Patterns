@@ -32,6 +32,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Tab
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
 
     <!--
+        M3 Mustard Cut
+        (https://github.com/Fall-Back/CSS-Mustard-Cut#the-m3-cut-much-more-modern)
         Print (Edge doesn't apply to print otherwise)
         IE 10, 11
         Edge

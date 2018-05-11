@@ -17,7 +17,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Tab
         /* Tiny fallback styles */
         /* (https://github.com/Fall-Back/Base/edit/master/tiny-fallback-styles.css) */
         body{padding:1em;margin:0 auto;max-width: 50em;}
-        img{max-width:100%;width:auto;height:auto;-ms-interpolation-mode: bicubic;}
+        img{max-width:100%;-ms-interpolation-mode: bicubic;}
         [hidden]{display:none;}
         main{display:block;}
 

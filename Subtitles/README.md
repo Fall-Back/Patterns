@@ -3,7 +3,7 @@ Subtitles
 
 [html5 Doctor: How to mark up subheadings, subtitles, alternative titles and taglines](http://html5doctor.com/howto-subheadings/)
 
-Also described / expounded in 'Inclusive Design Patterns' by Heydon Pickering [p80],  Tables of Contents (ToC) need some specific HTML to make them fully inclusive.
+Also described / expounded in 'Inclusive Design Patterns' by Heydon Pickering [p80],  Subtitles need some specific HTML to make them fully inclusive.
 
 
 Inline subtitle
@@ -16,6 +16,7 @@ Inline subtitle
 ```
 
 `<b>` because in HTML5 it means 'stylistically offset'.
+
 
 Separate Subtitle or Tagline
 ----------------------------

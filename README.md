@@ -47,6 +47,6 @@ There are so many templating options in existance, it would be impossible for me
 Dependancies and Browser Support
 --------------------------------
 
-All of these projects are built the CSS Mustard Cut in mind; everything is intended to work in same browser specified by the Original Cut, and should fail gracefull in older browsers or in the event of CSS or JS failure or disablement.
+All of these projects are built the [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut) in mind; everything is intended to work in same browser specified by the Original Cut, and should fail gracefull in older browsers or in the event of CSS or JS failure or disablement.
 
-The CSS for these patterns is designed to be built on top of StartCSS. Without StartCSS, the visuals will sometimes look sub-par out of the box but should function as exepcted, allowing them to be easily adapted for use with any other framework or CSS methodology.
+The CSS for these patterns is designed to be built on top of [StartCSS](https://github.com/Fall-Back/Start-CSS). Without StartCSS, the visuals will sometimes look sub-par out of the box but should function as exepcted, allowing them to be easily adapted for use with any other framework or CSS methodology.

@@ -31,7 +31,7 @@ If someone were to port the SASS into other languages, I'd consider including th
 JS
 --
 
-Where necessary I've included the minimum native, self-comtained JS required for a pattern to function.
+Where necessary I've included the minimum native, self-contained JS required for a pattern to function.
 The intention is that you concatente these JS files with you other JS, unless stated otherwise.
 
 

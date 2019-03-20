@@ -1,7 +1,7 @@
 Page
 ====
 
-Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Tables of Contents (ToC) need some specific HTML to make them fully inclusive.
+Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Page structurews need some specific HTML to make them fully inclusive.
 
 ```
 <!doctype html>

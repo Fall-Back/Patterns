@@ -57,10 +57,10 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Pag
         </p>
         <hr />
     </div>	
-
-    <h1>Page Title</h1>
         
     <main id="main">
+    
+        <h1>Page Title</h1>
     
     </main>
     

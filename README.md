@@ -3,8 +3,6 @@ Patterns
 
 Accessible, inclusive front end patterns.
 
-Coming soon.
-
 
 Background
 ----------

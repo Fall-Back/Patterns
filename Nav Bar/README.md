@@ -50,3 +50,8 @@ Markup Example
     </nav>
 </div>
 ```
+
+Dependancies
+------------
+
+* _start_settings.scss

@@ -29,7 +29,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Pag
         Accessible font loading. FOUT is a lesser evil than FOIT.
         (https://keithclark.co.uk/articles/loading-css-without-blocking-render/)
     -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
 
     <!--
         M3 Mustard Cut

@@ -33,7 +33,7 @@ Putting it to use (excuse the pun) for visual use only:
 For translatable, accessible use:
 
 ```
-<svg  class="icon" aria-labelledby="icon-title" focusable="false">
+<svg  class="icon" aria-labelledby="icon-title">
     <title id="icon-title">Translatable title</title>
     <use xlink:href="#icon-menu">
 </svg>

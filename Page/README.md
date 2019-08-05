@@ -14,6 +14,10 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Pag
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <style>
+        /* FOUC font match fallback */
+        /* Match your final body webfont with this tool: https://meowni.ca/font-style-matcher/ */
+        /* Paste the output here */
+        
         /* Tiny fallback styles */
         /* (https://github.com/Fall-Back/Base/edit/master/tiny-fallback-styles.css) */
         body{padding:1em;margin:0 auto;max-width: 50em;}

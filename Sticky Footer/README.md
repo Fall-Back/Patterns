@@ -15,22 +15,24 @@ Markup Example
 <body>
     <div class="sticky-footer-wrap">
 
-    ...
+        ...
 
-    <div class="sticky-footer-expand">
-
-    ...
-
-    </div>
-    <div class="sticky-footer">
+        <div class="sticky-footer-expand">
 
         ...
+
+        </div>
+        <div class="sticky-footer">
+
+            ...
+
+        </div>
 
     </div>
 </body>
 ```
 
-Dependancies
+Dependencies
 ------------
 
 * _start_settings.scss

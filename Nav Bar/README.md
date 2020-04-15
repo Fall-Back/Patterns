@@ -1,7 +1,7 @@
 Navbar
 ======
 
-A responsive CSS only navigation bar that degrades well in older browsers. Provides a single-tier dropdown.
+A responsive navigation bar that degrades well in older browsers. Provides a single-tier dropdown.
 
 Markup Example
 --------------

@@ -6,7 +6,7 @@ I use two different SVG methods for FallBack.
 The first is a simple `img` tag with a JS error handler to fall back to a PNG:
 
 ```
-&lt;img src="/path/to/image.svg" onerror="this.src='/path/to/fallback-image.png'; this.onerror=null;" alt="Don't forget this" height="80"&gt;
+<img src="/path/to/image.svg" onerror="this.src='/path/to/fallback-image.png'; this.onerror=null;" alt="Don't forget this" height="80">
 ```
 
 Note the `height="80"` in scenarios where CSS is unavailable, it's important to limit the hight of the image or it might take over the entire screen.
@@ -17,11 +17,11 @@ In most cases I think this is acceptable, but for a primary brand logo, you migh
 The second method is one I use for the primary brand logo that does not rely on an extra HTTP request (and thus potentially failing):
 
 ```
-&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.8 69.9" aria-labelledby="primary-logo-title" role="img" height="80"&gt;
-    &lt;title id="primary-logo-title"&gt;Your Brand Name Here&lt;/title&gt;
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.8 69.9" aria-labelledby="primary-logo-title" role="img" height="80">
+    <title id="primary-logo-title">Your Brand Name Here</title>
     ... the logo svg here ...
-    &lt;image src="/path/to/fallback-image.png" xlink:href="" alt="Your Brand Name Here" height="80"&gt;&lt;/image&gt;
-&lt;/svg&gt;
+    <image src="/path/to/fallback-image.png" xlink:href="" alt="Your Brand Name Here" height="80"></image>
+</svg>
 ```
 
 If SVG is unavailable, a fallback image is loaded. If TAHT is missing, then the alt text is shown.

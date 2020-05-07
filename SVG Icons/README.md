@@ -1,7 +1,7 @@
 SVG Icons
 =========
 
-This is my preferred method for SVG icons. I use [Feather Icons](https://feathericons.com) but the same princple can be applied to ay SVG.
+This is my preferred method for SVG icons. I use [Feather Icons](https://feathericons.com) but the same princple can be applied to any SVG.
 
 HTML
 ----

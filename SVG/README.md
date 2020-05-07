@@ -24,7 +24,7 @@ The second method is one I use for the primary brand logo that does not rely on 
 </svg>
 ```
 
-If SVG is unavailable, a fallback image is loaded. If TAHT is missing, then the alt text is shown.
+If SVG is unavailable, a fallback image is loaded. If THAT is missing, then the alt text is shown.
 It's possible to embed a base64 fallback here, but even then if images are disabled the image won't be shown, and this is an extremely unlikely scenario.
 The FallBack principal is not be perfect in all cases, but to be accessible in all cases.
 So long as your `alt` text provides your Brand name and any information your logo contains, then all users - even those on a crippled browser - can still get to the content.

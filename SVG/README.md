@@ -1,6 +1,8 @@
 SVG
 ===
 
+[Test page](https://fall-back.github.io/dev/svg/)
+
 I use two different SVG methods for FallBack.
 
 The first is a simple `img` tag with a JS error handler to fall back to a PNG:

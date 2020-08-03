@@ -13,7 +13,7 @@
         "css",
         "Patterns"
     ],
-    "license": "Apache",
+    "license": "MIT",
     "dependencies": {
         "Fall-Back-Start-CSS": "https://github.com/Fall-Back/Start-CSS.git"
     }

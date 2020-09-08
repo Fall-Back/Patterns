@@ -19,7 +19,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Pag
         /* Paste the output here */
         
         /* Tiny fallback styles */
-        /* (https://github.com/Fall-Back/Base/edit/master/tiny-fallback-styles.css) */
+        /* (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md) */
         body{padding:1em;margin:0 auto;max-width: 50em;}
         img{max-width:100%;-ms-interpolation-mode: bicubic;}
         [hidden]{display:none;}
@@ -27,6 +27,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Pag
 
         /* For YouTube via http://embedresponsively.com. May or may not be needed. */
         .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
     </style>
     
     <!--

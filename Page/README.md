@@ -69,7 +69,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     
     </main>
     
-    <footer>
+    <footer aria-label="Page">
         <p>
             <a href="#">Top</a>
         </p>

@@ -1,7 +1,7 @@
 Page
 ====
 
-Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Page structurews need some specific HTML to make them fully inclusive.
+Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page structurews need some specific HTML to make them fully inclusive.
 
 ```
 <!doctype html>
@@ -53,7 +53,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p143],  Pag
         only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)
     ">
 </head>
-<body role="document">
+<body>
 
     <div class="no-style-notice  no-css-only">
         <hr />

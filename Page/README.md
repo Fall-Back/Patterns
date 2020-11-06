@@ -14,20 +14,15 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <style>
-        /* FOUC font match fallback */
-        /* Match your final body webfont with this tool: https://meowni.ca/font-style-matcher/ */
-        /* Paste the output here */
-        
-        /* Tiny fallback styles */
-        /* (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md) */
-        body{padding:1em;margin:0 auto;max-width: 50em;}
-        img{max-width:100%;-ms-interpolation-mode: bicubic;}
+        /* Tiny Fallback Styles (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md) */
+        body{font-family:sans-serif;padding:1em;margin:0 auto;max-width:50em;}
+        img{max-width:100%;-ms-interpolation-mode:bicubic;}
         [hidden]{display:none;}
         main{display:block;}
+        pre{overflow-x:scroll;overflow-y:auto;}
 
         /* For YouTube via http://embedresponsively.com. May or may not be needed. */
-        .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
+        .embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;} .embed-container iframe, .embed-container object, .embed-container embed{position:absolute;top 0;left:0;width:100%;height:100%;}
     </style>
     
     <!--

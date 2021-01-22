@@ -20,11 +20,9 @@
 |-------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------*\
 
-    Designed for use with the EM2 [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
-    Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
-    FF 47+
-
-    PLUS IE11
+    Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+    IE 9+, FF 8+, Opera 12, Chrome 29+, Android ~4.4+
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
 
 \*------------------------------------------------------------------------------------------------*/
 /*
@@ -143,7 +141,6 @@ _:-o-prefocus, body:last-child .dropdown .dropdown__control {
     */
 .dropdown .dropdown__area {
   margin: 0;
-  z-index: 1;
 }
 
 /* -------------------------------------------------------------------------------------------*/

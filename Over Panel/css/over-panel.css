@@ -18,13 +18,18 @@
     https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3
 
 |-------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------*\
+/*! --------------------------------------------------------------------------------------------- *\
+    
+    Fall-Back Over Panel v1.0.0
+    https://github.com/Fall-Back/Patterns/tree/master/Over%20Panel
+    Copyright (c) 2021, Andy Kirk
+    Released under the MIT license https://git.io/vwTVl
 
     Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
     IE 9+, FF 8+, Opera 12, Chrome 29+, Android ~4.4+
     Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
 
-\*------------------------------------------------------------------------------------------------*/
+\* ---------------------------------------------------------------------------------------------- */
 /* -- Basic/fallback layout --------------------------------------------------------------------- */
 /*
         1. Helps compatibiliy with Nav-Bar. No down-sides I can see. May have to revise if some
@@ -201,17 +206,35 @@
             -o-transition:      opacity $td  $tf;
             transition:         opacity $td  $tf;
         }*/
+  /*
+            1. This necessary to collapse the element in cases where the page content without
+               the over-panel contents is shorter than the over-panel contents themselves.
+               Take, for example, where short-ish page that's part of a large site, which therefore 
+               has a long menu. When the menu is revealed in the over-panel contents, the end result
+               is higher than the page contents.
+               Without these declarations, the page (with over-panel closed) renders with a
+               scrollbar and what looks like mystery space at the bottom of the page (when in 
+               reality that space is just what's needed to display the over-panel contents).
+               This could be confusing for users (it was confusing for me!) and makes the page look
+               broken.
+               So, collapsing the contents while hidden prevents this space from appearing until
+               needed.
+        */
   .js-over-panel .over-panel .over-panel__contents {
     opacity: 0;
+    transform: scale(0);
+    /* [1] */
   }
   .js-over-panel_is-animating.over-panel .over-panel__contents {
-    -webkit-transition: opacity ease 0.8s, visibility 0s 0.8s ease;
-    -moz-transition: opacity ease 0.8s, visibility 0s 0.8s ease;
-    -o-transition: opacity ease 0.8s, visibility 0s 0.8s ease;
-    transition: opacity ease 0.8s, visibility 0s 0.8s ease;
+    -webkit-transition: opacity ease 0.8s, visibility 0s 0.8s ease, transform 0s 0.8s ease;
+    -moz-transition: opacity ease 0.8s, visibility 0s 0.8s ease, transform 0s 0.8s ease;
+    -o-transition: opacity ease 0.8s, visibility 0s 0.8s ease, transform 0s 0.8s ease;
+    transition: opacity ease 0.8s, visibility 0s 0.8s ease, transform 0s 0.8s ease;
   }
   .js-over-panel_is-open.over-panel .over-panel__contents {
     opacity: 1;
+    transform: scale(1);
+    /* [1] */
     -webkit-transition: opacity ease 0.8s;
     -moz-transition: opacity ease 0.8s;
     -o-transition: opacity ease 0.8s;
@@ -298,19 +321,21 @@
         }*/
   /*
             1. This is the obvious place for this rule but there's a weird Chrome bug that means
-               the postiion/dimensions are ignore if it's initiallty hidden.
-               Moving to the is-open declaration fixes this, as it only gets applie when it's
-               visisble.
+               the position/dimensions are ignore if it's initially hidden.
+               Moving to the is-open declaration fixes this, as it only gets applied when it's
+               visible.
+            2. Using absolute instead so that it still collapses, preventing it unintentionally
+               overlapping anything.
         */
   .js-over-panel .over-panel__overlay {
     display: block;
+    position: absolute;
+    /* [2] */
     z-index: -1;
     left: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+    width: 0;
+    height: 0;
     padding: 0;
     margin: 0;
     border: 0;
@@ -326,6 +351,10 @@
   /* Bring the overlay to the front and fade in when there's an over-panel target: */
   .js-over-panel_is-open .over-panel__overlay {
     position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
     opacity: 0.6;
     visibility: visible;

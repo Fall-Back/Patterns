@@ -19,6 +19,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         img{max-width:100%;-ms-interpolation-mode:bicubic;}
         [hidden]{display:none;}
         main{display:block;}
+        hr{border-top:1px solid;border-bottom:0 none;height:0px;}
+        fieldset{border:1px solid;}
         pre{overflow-x:scroll;overflow-y:auto;}
         button,input,select,textarea{vertical-align:middle;}
 

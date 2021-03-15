@@ -54,11 +54,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 <body>
 
     <div class="no-style-notice  no-css-only">
-        <hr />
-        <p>
-            <b>Notice:</b> You are viewing an unstyled version of this page. Are you using a very old browser? If so, <a href="http://browsehappy.com/">please consider upgrading</a>.
-        </p>
-        <hr />
+        <fieldset role="presentation">
+            <p>
+                <b>Notice:</b> You are viewing an unstyled version of this page. Are you using a very old browser? If so, <a href="https://browsehappy.com/?locale=en">please consider upgrading</a>.
+            </p>
+        </fieldset>
     </div>	
         
     <main id="main">

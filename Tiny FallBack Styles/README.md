@@ -95,7 +95,7 @@ Sometimes youy want some things to appear side-by-side. You can only do this if 
 
 This actually works fine, even on very small screens and has support back to the dark ages.
 **But I'm not supposd to use it**.
-Seems a shame doesn't it.
+Seems a shame doesn't it?
 
 There are more exmaples to add here, but the point is I'm wrestling with ignoring the Spec, the deprications, the 'MUST NOT's - I'm using these things wisely and sparingly and making sure the semantics are conveyed properly using aria so I'm not sure what the harm is. It's SO very tempting.
 
@@ -119,7 +119,7 @@ So I might have:
 
 ```
 
-And so on. I need to try this out, but you can already see the TFS has grown a bit, and the HTML won't be much leaner in most cases. Also even though the `table` display has old support, it's not as old as using an actual table.
+And so on. I need to try this out, but you can already see the TFS has grown a bit, and the HTML won't be much leaner in most cases. Also even though the `table` display has old support, it's not as old as using an actual table. Also, the main (only?) argument against things like `align="right"` is that they're "presentational only" attribrutes etc. Whilst I get this (I really do - I'm an advocate of semantic HTML and accessibility), is having `[tfs-text~="right"]` (or `[data-tfs-text~="right"]` to be valid) really any different?
 
 So arguably this approach costs more for less support?
 

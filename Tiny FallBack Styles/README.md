@@ -71,7 +71,7 @@ This gives us:
 
 **Example**
 
-<fieldset role="presentation">...
+<fieldset role="presentation">
     <p>
     This content is 'boxed in' and can be quite useful for menus, 'cards', figures, or anything else you want a border around, or want to separate in some way.
     </p>

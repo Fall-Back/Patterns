@@ -64,23 +64,63 @@ This TFS makes things look much better in Failed CSS scenarios. As discussed we 
 User Agent 'Tricks'
 ------------------
 
+[Examples](https://fall-back.github.io/test/tfs-not-allowed.html)
+
 Using `<fieldset>` around things can go a long way to help break up content, especially on a long page. we can add `role="presentation"` to avoid any accessibility (a11y) issues (though I've never encounteded any without it).
 This gives us:
 
-1. `<fieldset role="presentation">...</fieldset>`
-
-**Example**
-
-<fieldset role="presentation">
-    <p>
-    This content is 'boxed in' and can be quite useful for menus, 'cards', figures, or anything else you want a border around, or want to separate in some way.
-    </p>
-</fieldset>
-
+1.
+```
+<fieldset role="presentation">...</fieldset>`
+```
 ---
 
 
-Sometimes youy want some things to appear side-by-side. You can only do this if you use a table, and they don't snap into a single column. But, if you know you're only displaying a small amount of text, it does work:
+Sometimes youy want some things to appear side-by-side. You can only do this if you use a table, and they don't snap into a single column. But, if you know you're only displaying a small amount of text, it does work. Here I've added more attributes to tidy it all up:
 
+```
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+    <tbody>
+        <tr valign="top">
+            <td>
+                Left content
+            </td>
+            <td align="right">
+                Right content
+            </td>
+        </tr>
+    </tbody>
+</table>
+```
 
+This actually works fine, even on very small screens and has support back to the dark ages.
+**But I'm not supposd to use it**.
+Seems a shame doesn't it.
 
+There are more exmaples to add here, but the point is I'm wrestling with ignoring the Spec, the deprications, the 'MUST NOT's - I'm using these things wisely and sparingly and making sure the semantics are conveyed properly using aria so I'm not sure what the harm is. It's SO very tempting.
+
+But
+---
+
+If I'm not allowed to use these, what's the alternative? Well, I've already establisedh No CSS scenarios as being very unlikely, so that leaves the Failed CSS scenarious and the TFS. If I choose to exand this a little (boo - I wanted them to be as small as possible), I can add some attributes and such to do similar things. I'm thinking of using `tfs-*` attributes (I know - already invalid but loads of things use custom attributes like this, and it save's on bytes).
+
+So I might have:
+
+```
+[tfs-text~="left"] {text-align: left;} /* Maybe not because it's the default? */
+[tfs-text~="right"] {text-align: right;}
+[tfs-text~="center"] {text-align: center;}
+[tfs-text~="larger"] {font-size: larger;}
+
+[tfs-block~="border"] {border: 1px solid;}
+[tfs-block~="padding"] {padding: 1em;}
+[tfs-block~="table"] {display: table; width: 100%; border-collapse: collapse; table-layout: fixed;}
+[tfs-block~="cell"] {display: table-cell;}
+
+```
+
+And so on. I need to try this out, but you can already see the TFS has grown a bit, and the HTML won't be much leaner in most cases. Also even though the `table` display has old support, it's not as old as using an actual table.
+
+So arguably this approach costs more for less support?
+
+Honestly, I'm torn.

@@ -1,4 +1,4 @@
-Tiny FallBAck Styles (TFS)
+Tiny FallBack Styles (TFS)
 ==========================
 
 Ok, so there are situtations where your stylesheets won't load:
@@ -64,4 +64,23 @@ This TFS makes things look much better in Failed CSS scenarios. As discussed we 
 User Agent 'Tricks'
 ------------------
 
-Using `<fieldset>` around things can go a long way to help break up content, especially on a long page. we can add `role="presentation"` to avoid any accessibility (a11y) issues (thogh I've never encounteded any without it.
+Using `<fieldset>` around things can go a long way to help break up content, especially on a long page. we can add `role="presentation"` to avoid any accessibility (a11y) issues (though I've never encounteded any without it).
+This gives us:
+
+1. `<fieldset role="presentation">...</fieldset>`
+
+**Example**
+
+<fieldset role="presentation">...
+    <p>
+    This content is 'boxed in' and can be quite useful for menus, 'cards', figures, or anything else you want a border around, or want to separate in some way.
+    </p>
+</fieldset>
+
+---
+
+
+Sometimes youy want some things to appear side-by-side. You can only do this if you use a table, and they don't snap into a single column. But, if you know you're only displaying a small amount of text, it does work:
+
+
+

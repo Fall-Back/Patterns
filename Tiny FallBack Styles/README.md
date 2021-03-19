@@ -119,7 +119,7 @@ So I might have:
 
 ```
 
-And so on. I need to try this out, but you can already see the TFS has grown a bit, and the HTML won't be much leaner in most cases. Also even though the `table` display has old support, it's not as old as using an actual table. Also, the main (only?) argument against things like `align="right"` is that they're "presentational only" attribrutes etc. Whilst I get this (I really do - I'm an advocate of semantic HTML and accessibility), is having `[tfs-text~="right"]` (or `[data-tfs-text~="right"]` to be valid) really any different?
+And so on. I need to try this out, but you can already see the TFS has grown a bit, and the HTML won't be much leaner in most cases. Also even though the `table` display has old support, it's not as old as using an actual table. Also, the main (only?) argument against things like `align="right"` is that they're "presentational only" attribrutes etc. Whilst I get this (I really do - I'm an advocate of semantic HTML and accessibility), is having `tfs-text="right"` (or `data-tfs-text="right"` to be valid) really any different?
 
 So arguably this approach costs more for less support?
 

@@ -106,7 +106,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             vertical-align: middle;
             vertical-align: middle;
             min-height: 2.2em;
-            padding: 0 0.5em;
+            margin: 0.2em 0;
         }
         
         button,
@@ -120,6 +120,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         button {
             line-height: 0;
+        }
+        
+        input,
+        textarea {
+            padding: 0 0.5em;
         }
 
         /* --| Table styles |-------------------------------------------------------------------- */
@@ -148,12 +153,12 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             padding: 0.5em;
         }
         
-        </style>
+    </style>
     
-        <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
-        <!--[if !IE]><!-->
-          
-        <style>
+    <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
+    <!--[if !IE]><!-->
+      
+    <style>
         /* Tiny Fall-Back Styles continued... */
 
         /* --| Other stuff |--------------------------------------------------------------------- */

@@ -148,7 +148,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         /* --| Other stuff |--------------------------------------------------------------------- */
         /*
-            What follows is a mix of markup patterns and attributes to to help provide a more
+            What follows is a mix of markup patterns and attributes to help provide a more
             reasonable fallback - it's unconventional, so leave it out if you like.
         */
 

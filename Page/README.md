@@ -86,6 +86,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         button,
         input,
+        label,
         select,
         textarea {
             vertical-align: middle;

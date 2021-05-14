@@ -81,23 +81,6 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             vertical-align: middle;
         }
 
-        /* --| Form styles |--------------------------------------------------------------------- */
-        /* If you're using forms, keep this: */
-
-        button,
-        input,
-        label,
-        select,
-        textarea {
-            vertical-align: middle;
-            min-height: 2.2em;
-        }
-
-        button {
-            line-height: 0;
-        }
-
-
         hr {
             border-style: solid;
             border-width: 1px 0 0 0;
@@ -110,6 +93,33 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             width: 100%;
             overflow-x: scroll;
             overflow-y: auto;
+        }
+
+        /* --| Form styles |--------------------------------------------------------------------- */
+        /* If you're using forms, keep this: */
+
+        button,
+        input,
+        label,
+        select,
+        textarea {
+            vertical-align: middle;
+            vertical-align: middle;
+            min-height: 2.2em;
+            padding: 0 0.5em;
+        }
+        
+        button,
+        input[type="checkbox"],
+        input[type="radio"],
+        label,
+        select,
+        textarea {
+            cursor: pointer;
+        }
+
+        button {
+            line-height: 0;
         }
 
         /* --| Table styles |-------------------------------------------------------------------- */

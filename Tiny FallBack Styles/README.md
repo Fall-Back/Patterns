@@ -16,7 +16,7 @@ No CSS
 5. If someone is using a text-only browser
 6. If someone has disabled stylesheets
 
-Now these last two I don't have data on - I don't know if people still use text-only browsers; and I don't know if anyone browses the web with styles deliberatly disabled (expect perhaps Web Developers (myself included) with [a point to prove](https://css-tricks.com/that-time-i-tried-browsing-the-web-without-css/).
+Now these last two I don't have data on - I don't know if people still use text-only browsers; and I don't know if anyone browses the web with styles deliberatly disabled (expect perhaps Web Developers (myself included) with [a point to prove](https://css-tricks.com/that-time-i-tried-browsing-the-web-without-css/)).
 I'm not even sure it's possible to disable CSS in any mobile browser?
 Number 3 is something I'm seriously considereding and I need to do more research on.
 

@@ -159,7 +159,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     <!--[if !IE]><!-->
       
     <style>
-        /* Tiny Fall-Back Styles continued... */
+        /* Tiny Fall-Back Styles continued ... */
 
         /* --| Other stuff |--------------------------------------------------------------------- */
         /*

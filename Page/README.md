@@ -23,7 +23,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             be used by the elements on the page be removed to make this as lean as possible, and
             the run through a minifier (e.g. https://cssminifier.com) to compress it as much a
             possible, since this is sent on each request and not cached.
-            Note there's a section that uses attributes to apply styles to specific element. This
+            Note there's a section that uses attributes to apply styles to specific elements. This
             is so as not to pollute the class space and help authors make distinctions.
             There's a much long essay on this brewing and I'll add the link when it's done.
         */

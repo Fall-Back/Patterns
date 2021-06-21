@@ -8,7 +8,7 @@ Failed CSS
 
 1. If the connection/request fails they won't arrive
 2. If the browser is being 'cut' by a {Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
-3. If you've implemented some sort of 'Lite' version of you app to let users choose not to load them
+3. If you've implemented some sort of 'Lite' version of your site/app to let users choose not to load them
 
 No CSS
 ------

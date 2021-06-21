@@ -48,15 +48,18 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         hgroup,
         main,
         nav,
-        section {
+        section,
+        summary {
             display: block;
             margin-bottom: 1em;
         }
 
-        summary {
-            display: list-item;
-            margin-bottom: 1em;
+        @supports (list-style-type: disclosure-closed) {
+            summary {
+                display: list-item;
+            }
         }
+
 
         mark {
             background: #FF0;
@@ -112,7 +115,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             min-height: 2.2em;
             margin: 0.2em 0;
         }
-        
+
         button,
         input[type="checkbox"],
         input[type="radio"],
@@ -122,13 +125,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             cursor: pointer;
         }
 
-        button {
-            line-height: 0;
-        }
-        
+        button,
         input,
         textarea {
             padding: 0 0.5em;
+            line-height: 1;
         }
 
         /* --| Table styles |-------------------------------------------------------------------- */
@@ -156,7 +157,6 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         caption, td, th {
             padding: 0.5em;
         }
-        
     </style>
     
     <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->

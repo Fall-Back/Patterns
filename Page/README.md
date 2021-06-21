@@ -129,7 +129,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         input,
         textarea {
             padding: 0 0.5em;
-            line-height: 1;
+            line-height: 1.5;
         }
 
         /* --| Table styles |-------------------------------------------------------------------- */

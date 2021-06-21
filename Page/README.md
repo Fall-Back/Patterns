@@ -48,9 +48,13 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         hgroup,
         main,
         nav,
-        section,
-        summary {
+        section {
             display: block;
+            margin-bottom: 1em;
+        }
+
+        summary {
+            display: list-item;
             margin-bottom: 1em;
         }
 

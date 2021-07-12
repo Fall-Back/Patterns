@@ -79,7 +79,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
         /* More responsive images: */
-        /* Note ancient image tag is actually for the SVG FalBack PNG method */
+        /* Note ancient image tag is actually for the SVG FallBack PNG method */
         img,
         image,
         svg {

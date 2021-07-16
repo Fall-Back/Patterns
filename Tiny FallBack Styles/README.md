@@ -20,7 +20,7 @@ Now these last two I don't have data on - I don't know if people still use text-
 I'm not even sure it's possible to disable CSS in any mobile browser?
 Number 3 is something I'm seriously considering and I need to do more research on.
 
-Right, so if the stylesheets haven't loaded you're normally left with a fairly ugly column of raw HTML - even with the cleanest, most well-organised markup. User Agent Stylesheets provide some critical styles like margins, font sizes and weights and display properties, [for example](http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css).
+Right, so if the stylesheets haven't loaded you're normally left with a fairly ugly column of raw-rendered HTML - even with the cleanest, most well-organised markup. User Agent Stylesheets provide some critical styles like margins, font sizes and weights and display properties, [for example](http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css).
 
 I've thought quite a lot about this, and I'd love to be able to leverage this stylesheet more in creating a more useable FallBack experience. By using deprecated attributes and inappropriate tags we can create something that works a little better, BUT, that's against the spec.
 

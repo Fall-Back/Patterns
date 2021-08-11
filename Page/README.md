@@ -6,13 +6,13 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 ```
 <!doctype html>
 <html class="no-js" lang="en-gb">
-<head>    
+<head>
     <meta charset="utf-8" />
     <title>Page Title | Site Name</title>
-    
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Ultra-light fallback styles for ancient browsers: -->
     <style>
         /*
@@ -37,21 +37,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
         /* For older browsers:(see https://github.com/aFarkas/html5shiv) */
-        article,
-        aside,
         dialog,
         details,
-        figcaption,
-        figure,
-        footer,
-        header,
-        hgroup,
         main,
-        nav,
-        section,
         summary {
             display: block;
-            margin-bottom: 1em;
         }
 
         @supports (list-style-type: disclosure-closed) {
@@ -59,7 +49,6 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
                 display: list-item;
             }
         }
-
 
         mark {
             background: #FF0;
@@ -74,24 +63,43 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         /* The "older browser" message makes use of a fieldset to add a border no matter what: */
         fieldset {
             border: 1px solid;
-            padding: 16px;
             border-color: #777;
+            margin: 1em 0;
+            padding: 1em;
         }
 
         /* More responsive images: */
-        /* Note ancient image tag is actually for the SVG FallBack PNG method */
+        /* Note ancient image tag is actually for the SVG FalBack PNG method */
         img,
         image,
         svg {
             max-width: 100%;
             -ms-interpolation-mode: bicubic;
             vertical-align: middle;
+            height: auto;
+            border: 0;
+        }
+
+        /*
+            Putting things like tables in figures makes sense an allows them to become scrollable
+            if they're too wide.
+        */
+        figure {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        /*
+            BUT! Opera Mini doesn't support scrolling areas so hacking it out for that browser:
+        */
+        _:-o-prefocus, :root figure {
+            max-width: initial;
+            overflow-x: visible;
         }
 
         hr {
             border-style: solid;
-            border-width: 1px 0 0 0;
-            height: 0;
+            border-width: 0 0 1px 0;
             margin: 1em 0;
             color: #777;
         }
@@ -100,6 +108,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             width: 100%;
             overflow-x: scroll;
             overflow-y: auto;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
         }
 
         /* --| Form styles |--------------------------------------------------------------------- */
@@ -158,10 +171,10 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             padding: 0.5em;
         }
     </style>
-    
+
     <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
     <!--[if !IE]><!-->
-      
+
     <style>
         /* Tiny Fall-Back Styles continued ... */
 
@@ -198,6 +211,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         [data-fs-block~="border"] {
             border: 1px solid;
+            margin: 1em 0;
             padding: 1em;
         }
 
@@ -221,6 +235,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         [data-fs-block~="table"] > * {
             display: table-cell;
+            padding: 0.5em;
         }
 
 
@@ -230,6 +245,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         */
 
         [data-fs-block~="flex"] {
+            display: -webkit-box;
             display: -webkit-flex;
             display: -moz-box;
             display: -ms-flexbox;
@@ -240,6 +256,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
         [data-fs-block~="flex"] > * {
+            -webkit-box-flex: 1;
             -webkit-flex: 1 0 auto;
             -moz-box-flex: 1;
             -ms-flex: 1 0 auto;
@@ -269,9 +286,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         [data-fs-hr="larger"] {
             border-top-width: 10px;
         }
-
     </style>
-    
+
     <!--
         Accessible font loading. FOUT is a lesser evil than FOIT.
         (https://keithclark.co.uk/articles/loading-css-without-blocking-render/)
@@ -285,7 +301,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         IE 10, 11
         Edge
         Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
-        FF 29+   
+        FF 29+
     -->
     <link rel="stylesheet" href="your-stylesheet.css" media="
         only print, screen and (min-width: 1vm),
@@ -294,9 +310,9 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         only all and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0),
         only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)
     ">
-    
+
     <!-- Other styles and scripts inside the IE9- cut ... -->
-    
+
     <!--<![endif]-->
 </head>
 <body>
@@ -307,20 +323,20 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
                 <b>Notice:</b> You are viewing an unstyled version of this page. Are you using a very old browser? If so, <a href="https://browsehappy.com/?locale=en">please consider upgrading</a>.
             </p>
         </fieldset>
-    </div>	
-    
+    </div>
+
     <header>
         <nav aria-label="primary">
             ...
         </nav>
     </header>
-        
+
     <main id="main">
-    
+
         <h1>Page Title</h1>
-    
+
     </main>
-    
+
     <footer aria-label="Page">
         <p>
             <a href="#">Top</a>

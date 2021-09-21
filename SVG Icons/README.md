@@ -24,65 +24,32 @@ Defining the icon set:
 </svg>
 
 ```
-Putting it to use (excuse the pun) for visual use only:
+And use them like this:
 
 ```
-<svg display="none" class="icon"><use xlink:href="#icon-menu"></use></svg>
+<svg focusable="false" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-menu"></use></svg>
 ```
+
+Note the `width` and `height` attributes should be set to something that makes sense in context.
+Check your use-cases in a CSS-less scenario. Any icons that should not be visible in this scenario can be hidden by default by adding `display="none"`:
+Icon sizes can be adjusted with the `width` and `height` attributes in these cases, and sizes according to design requiements in the CSS.
+
+```
+<svg display="none" focusable="false" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-menu"></use></svg>
+```
+
+And make your CSS components override this with `display="inline"` or whatever.
 
 For translatable, accessible use:
 
 ```
-<svg  class="icon" aria-labelledby="icon-title">
+<svg aria-labelledby="icon-title" width="1em" height="1em">
     <title id="icon-title">Translatable title</title>
-    <use xlink:href="#icon-menu">
+    <use xlink:href="#icon-menu" >
 </svg>
 ```
 
 
-CSS
----
-Taken from [StartCSS](https://github.com/Fall-Back/Start-CSS/blob/master/scss/_start-icons.scss)
-
-```
-/*
-    1. Override display attribute.
-    2. FF55- otherwise fill is applied.
-*/
-.icon {
-    display: inline; /* [1] */
-
-    fill: none;
-    fill-opacity: 0; /* [2] */
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    width: 1.25em;
-    height: 1.25em;
-    
-    margin: 0;
-    padding: 0;
-}
-
-_:-o-prefocus, :root .icon {
-    vertical-align: middle;
-}
-
-.icon-wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-       -ms-flex-align: center;
-          align-items: center;
-    -webkit-box-pack: center;
-       -ms-flex-pack: center;
-     justify-content: center;
-}
-
-```
 
 Further reading
 ---------------

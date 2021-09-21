@@ -24,23 +24,16 @@ Defining the icon set:
 </svg>
 
 ```
-And use them like this:
+
+And use them in one of two ways:
+
+Firstly, icons that should appear as part of the content, even in a no-CSS scenario:
 
 ```
 <svg focusable="false" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-menu"></use></svg>
 ```
 
-Note the `width` and `height` attributes should be set to something that makes sense in context.
-Check your use-cases in a CSS-less scenario. Any icons that should not be visible in this scenario can be hidden by default by adding `display="none"`:
-Icon sizes can be adjusted with the `width` and `height` attributes in these cases, and sizes according to design requiements in the CSS.
-
-```
-<svg display="none" focusable="false" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-menu"></use></svg>
-```
-
-And make your CSS components override this with `display="inline"` or whatever.
-
-For translatable, accessible use:
+Or for translatable, accessible use:
 
 ```
 <svg aria-labelledby="icon-title" width="1em" height="1em">
@@ -49,7 +42,15 @@ For translatable, accessible use:
 </svg>
 ```
 
+Note the `width` and `height` attributes should be set to something that makes sense in the context of a no-CSS scenario. Icon sizes can be adjusted using CSS as normal.
 
+Secondly, any icons that should not be visible in this scenario can be hidden by default by replacing the `width` and `height` attributes with `display="none"`:
+
+```
+<svg focusable="false" aria-hidden="true" display="none"><use xlink:href="#icon-menu"></use></svg>
+```
+
+Your CSS components can then override this with `display="inline"` or whatever.
 
 Further reading
 ---------------

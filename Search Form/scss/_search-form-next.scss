@@ -96,8 +96,8 @@ $s__search-form-max-width:                      25em !default;
            width AND min-width.
     */
     .search-form .search-form__field {
-        position: relative;
-        z-index: 1;
+        //position: relative;
+        //z-index: 1;
 
         border-radius: 0;
         border: 0;
@@ -118,7 +118,8 @@ $s__search-form-max-width:                      25em !default;
         width: 1%;     /* [1] */
         min-width: 1%; /* [1] */
     }
-
+    
+    /*
     // Reset the width for FF8-27: ...
     @media screen and (min--moz-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
         .search-form .search-form__field {
@@ -138,10 +139,13 @@ $s__search-form-max-width:                      25em !default;
             width: 1%;
         }
     }
+    */
 
 
     .search-form .search-form__field:focus {
         background-color: $s__search-form__field--background-color--alt;
+        position: relative;
+        z-index: 1;
     }
 
     /* -------------------------------------------------------------------------------------------*/
@@ -152,8 +156,8 @@ $s__search-form-max-width:                      25em !default;
     /*
     */
     .search-form .search-form__submit {
-        position: relative;
-        z-index: 1;
+        //position: relative;
+        //z-index: 1;
 
         border-radius: 0;
         border: 0;
@@ -176,6 +180,11 @@ $s__search-form-max-width:                      25em !default;
     .search-form .search-form__submit:hover,
     .search-form .search-form__submit:focus {
         background-color: $s__search-form__submit--background-color--alt;
+    }
+    
+    .search-form .search-form__submit:focus {
+        position: relative;
+        z-index: 1;
     }
 
 

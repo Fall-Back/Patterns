@@ -34,6 +34,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             padding: 1em;
             margin: 0 auto;
             max-width: 50em;
+
+            word-break: break-word;
         }
 
         /* For older browsers:(see https://github.com/aFarkas/html5shiv) */
@@ -63,7 +65,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         /* The "older browser" message makes use of a fieldset to add a border no matter what: */
         fieldset {
             border: 1px solid;
-            border-color: #777;
+            border-color: darkslategrey;
             margin: 1em 0;
             padding: 1em;
         }
@@ -72,6 +74,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         /* Note ancient image tag is actually for the SVG FalBack PNG method */
         img,
         image,
+        object,
         svg {
             max-width: 100%;
             -ms-interpolation-mode: bicubic;
@@ -80,8 +83,17 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             border: 0;
         }
 
+        /* Links and imasge links */
+        a {
+            color: darkslategrey;
+        }
+
+        a img {
+            border: 1px solid currentColor;
+        }
+
         /*
-            Putting things like tables in figures makes sense an allows them to become scrollable
+            Putting things like tables in figures makes sense and allows them to become scrollable
             if they're too wide.
         */
         figure {
@@ -101,7 +113,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             border-style: solid;
             border-width: 0 0 1px 0;
             margin: 1em 0;
-            color: #777;
+            color: darkslategrey;
         }
 
         pre {
@@ -114,6 +126,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             max-width: 100%;
             height: auto;
         }
+
 
         /* --| Form styles |--------------------------------------------------------------------- */
         /* If you're using forms, keep this: */
@@ -145,12 +158,13 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             line-height: 1.5;
         }
 
+
         /* --| Table styles |-------------------------------------------------------------------- */
         /* If you're using tables, keep this: */
 
         table {
             width: 100%;
-            border: 1px solid #777;
+            border: 1px solid darkslategrey;
             border-collapse: collapse;
         }
 
@@ -164,7 +178,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
         th {
-            background: #eee;
+            background: silver;
         }
 
         caption, td, th {
@@ -201,16 +215,30 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             font-size: larger;
         }
 
+
         [data-fs-text~="nowrap"] {
             white-space: nowrap;
         }
 
+
+        /* Block styles: */
         [data-fs-block~="background"] {
-            background: #eee;
+            background: silver;
+            padding: 1em;
+        }
+
+        [data-fs-block="inverted"]  {
+            background-color: darkslategrey;
+            padding: 1em;
+        }
+
+        [data-fs-block="inverted"] * {
+            color: #fff;
+
         }
 
         [data-fs-block~="border"] {
-            border: 1px solid;
+            border: 1px solid darkslategrey;
             margin: 1em 0;
             padding: 1em;
         }
@@ -243,7 +271,6 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             Layout: flex;
             More responsive and has wrapping, but less well supported than the table layout.
         */
-
         [data-fs-block~="flex"] {
             display: -webkit-box;
             display: -webkit-flex;
@@ -257,14 +284,14 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         [data-fs-block~="flex"] > * {
             -webkit-box-flex: 1;
-            -webkit-flex: 1 0 auto;
+            -webkit-flex: 1 1 auto;
             -moz-box-flex: 1;
-            -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto
         }
 
-        /* Responsive embeds (e.g. YouTube, maps) via http://embedresponsively.com. */
 
+        /* Responsive embeds (e.g. YouTube, maps) via http://embedresponsively.com. */
         [data-fs-block="video"] {
             position: relative;
             padding-bottom: 56.25%;
@@ -283,6 +310,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             height: 100%;
         }
 
+
+        /* Horizontal rules: */
         [data-fs-hr="larger"] {
             border-top-width: 10px;
         }

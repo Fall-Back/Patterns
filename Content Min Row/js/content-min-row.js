@@ -104,15 +104,15 @@
 
                 // Set widths for flexible children:
                 Array.prototype.forEach.call(children, function (child, i) {
-                    console.log(child);
+                    //console.log(child);
                     if (child.getAttribute('data-min-width')) {
                         var w = parseInt(child.getAttribute('data-min-width'));
-                        console.log('w', w);
-                        console.log(getComputedStyle(child));
+                        //console.log('w', w);
+                        //console.log(getComputedStyle(child));
 
                         var pLeft  = parseInt(getComputedStyle(child).paddingLeft);
                         var pRight = parseInt(getComputedStyle(child).paddingRight);
-                        console.log(w, pLeft, pRight);
+                        //console.log(w, pLeft, pRight);
                         set_style(child, {
                             'width': (w + pLeft + pRight) + 'px !important',
                             'max-width': (w + pLeft + pRight) + 'px !important',
@@ -123,6 +123,9 @@
 
                 // Handle IE separately:
                 if (!!window.MSInputMethodContext && !!document.documentMode) {
+                    var pLeft  = parseInt(getComputedStyle(clone).paddingLeft);
+                    var pRight = parseInt(getComputedStyle(clone).paddingRight);
+                    breakpoint += pLeft + pRight;
                     Array.prototype.forEach.call(children, function (child, i) {
                         breakpoint += Math.ceil(child.offsetWidth);
                     });

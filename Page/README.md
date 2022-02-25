@@ -184,15 +184,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         caption, td, th {
             padding: 0.5em;
         }
-    </style>
-
-    <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
-    <!--[if !IE]><!-->
-
-    <style>
-        /* Tiny Fall-Back Styles continued ... */
-
-        /* --| Other stuff |--------------------------------------------------------------------- */
+        
         /*
             What follows is a mix of markup patterns and attributes to help provide a more
             reasonable fallback - it's unconventional, so leave it out if you like.
@@ -215,10 +207,24 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             font-size: larger;
         }
 
-
         [data-fs-text~="nowrap"] {
             white-space: nowrap;
         }
+    </style>
+
+    <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
+    <!--[if !IE]><!-->
+
+    <style>
+        /* Tiny Fall-Back Styles continued ... */
+
+        /* --| Other stuff |--------------------------------------------------------------------- */
+        /*
+            What follows is a mix of markup patterns and attributes to help provide a more
+            reasonable fallback - it's unconventional, so leave it out if you like.
+        */
+
+        /* Attributes to replicate deprecated HTML styling: */
 
 
         /* Block styles: */

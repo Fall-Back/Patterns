@@ -28,8 +28,12 @@ $s__dropdown--text-color:                      #fff !default;
 $s__dropdown__control--color:                  $s__dropdown--text-color !default;
 $s__dropdown__control--color--alt:             $s__dropdown__control--color !default;
 $s__dropdown__control--background-color:       $s__dropdown--background-color !default;
-$s__dropdown__control--background-color--alt:  darken($s__dropdown--background-color, 14%) !default;
-$s__dropdown__control--background-color--alt2: darken($s__dropdown--background-color, 7%) !default;
+$s__dropdown__control--background-color--alt:  false !default;
+$s__dropdown__control--background-color--alt2: false !default;
+@if $s__dropdown--background-color != false {
+    $s__dropdown__control--background-color--alt:  darken($s__dropdown--background-color, 14%) !default;
+    $s__dropdown__control--background-color--alt2: darken($s__dropdown--background-color, 7%) !default;
+}
 
 $s__dropdown__control--border-color:           rgba(255,255,255,0.2) !default;
 $s__dropdown__control--border-style:           solid !default;
@@ -105,7 +109,9 @@ $s__dropdown-z-index:                          9999 !default;
            --Prevent any overflow and possible contain floats.--
     */
     .dropdown .dropdown__area {
-        background-color: $s__dropdown--background-color; /* 1 */
+        @if $s__dropdown--background-color != false {
+            background-color: $s__dropdown--background-color;/* 1 */
+        }
         color: $s__dropdown--text-color;
         //overflow: hidden; /* 2 */
         padding: $s__dropdown--padding;
@@ -173,7 +179,9 @@ $s__dropdown-z-index:                          9999 !default;
 
     .dropdown .dropdown__control {
         color: $s__dropdown__control--color;
-        background-color: $s__dropdown__control--background-color;
+        @if $s__dropdown__control--background-color != false {
+            background-color: $s__dropdown__control--background-color;
+        }
     }
 
     /*
@@ -186,12 +194,16 @@ $s__dropdown-z-index:                          9999 !default;
     .dropdown .dropdown__control:active,
     .dropdown .dropdown__control[aria-expanded="true"] {
         color: $s__dropdown__control--color--alt;
-        background-color: $s__dropdown__control--background-color--alt;
+        @if $s__dropdown__control--background-color--alt != false {
+            background-color: $s__dropdown__control--background-color--alt;
+        }
     }
 
     .dropdown .dropdown__control:focus {
         color: $s__dropdown__control--color--alt;
-        background-color: $s__dropdown__control--background-color--alt2;
+        @if $s__dropdown__control--background-color--alt2 != false {
+            background-color: $s__dropdown__control--background-color--alt2;
+        }
     }
 
 

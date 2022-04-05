@@ -1,6 +1,6 @@
 /*! --------------------------------------------------------------------------------------------- *\
 
-    Fall-Back Close Button v1.0.0
+    Fall-Back Close Button v2.0.0
     https://github.com/Fall-Back/Patterns/tree/master/Close%20Button
     Copyright (c) 2021, Andy Kirk
     Released under the MIT license https://git.io/vwTVl
@@ -47,13 +47,6 @@
 '    <svg focusable="false" class="icon  icon--is-open"><use xlink:href="#icon-cross"></use></svg></button>' +
 '</button>' + "\n";
 
-    var ready = function(fn) {
-        if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-            fn();
-        } else {
-            document.addEventListener('DOMContentLoaded', fn);
-        }
-    }
 
     var $close_button = {
 
@@ -88,5 +81,5 @@
         }
     }
 
-    ready($close_button.init);
+    $flbk.u.ready($close_button.init);
 })();

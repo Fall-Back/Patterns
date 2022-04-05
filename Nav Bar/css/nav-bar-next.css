@@ -1,5 +1,7 @@
 /*-------------------------------------------------------------------------------------------------|
-    Fall-Back Start-CSS Settings
+
+    START-CSS TOKENS
+    ============================================================================================
 
     Fall-Back is designed for use with the basic
     [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
@@ -18,9 +20,48 @@
     https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3
 
 |-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+
+    START-CSS SETTINGS
+    ============================================================================================
+
+    Fall-Back is designed for use with the basic
+    [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+
+    This determines a browser support base of:
+
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+
+
+    Any double-classing (e.g. `.class.class`) is deliberate and intended to increase specifity.
+    This allows any applicable Start-CSS declarations to be overidden.
+    E.g. `.{pattern} .{pattern}__child` would `a[href]`, but just `.{pattern}` wouldn't, so we use
+    `.{pattern}.{pattren}`
+
+    https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3
+
+|-------------------------------------------------------------------------------------------------*/
+/*
+    HTML
+*/
+/*
+    BODY
+*/
+/*
+    ANCHOR
+
+    1. This size allows 2px on normal fonts, 1px on smaller fonts.
+*/
+/* [1] */
+/* [1] */
+/* [1] */
+/*
+    ASIDE
+*/
 /*! --------------------------------------------------------------------------------------------- *\
-    
-    Fall-Back Nav Bar v3.0.0
+
+    Fall-Back Nav Bar vNEXT
     https://github.com/Fall-Back/Patterns/tree/master/Nav%20Bar
     Copyright (c) 2021, Andy Kirk
     Released under the MIT license https://git.io/vwTVl
@@ -51,7 +92,7 @@
 .nav-bar {
   /* -- Main wrapper ---------------------------------------------------------------------------*/
   /*
-        1. Helps to position above subsequent elements so subnavs sit on top.
+        1. Helps to position above subsequent elements so sub-navs sit on top.
         There are problems with this, if z-index or position is declared it messes up positioning
         if subsequent blocks also are nav-bars or similar.
     */
@@ -78,6 +119,12 @@
         (this excludes submenu heading links - note that submenu links should never also be
         submenu heading links)
     */
+  /*.nav-bar__link:focus {
+        color: $s__nav-bar__link--color--alt;
+        background-color: $s__nav-bar__link--background-color--alt2;
+        border: 0;
+        box-shadow: none;
+    }*/
   /* -------------------------------------------------------------------------------------------*/
 }
 
@@ -93,26 +140,26 @@
   margin: 0;
 }
 
-.nav-bar .subnav {
+.nav-bar .sub-nav {
   padding: 0;
   margin: 0;
 }
 
 .nav-bar .nav-bar__items,
-.nav-bar .subnav__items {
+.nav-bar .sub-nav__items {
   display: block;
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.nav-bar .subnav__items {
+.nav-bar .sub-nav__items {
   margin-left: 1.125em;
   background-color: #113b4d;
 }
 
 .nav-bar .nav-bar__item,
-.nav-bar .subnav__item {
+.nav-bar .sub-nav__item {
   margin: 0;
 }
 
@@ -127,9 +174,10 @@
 }
 
 .nav-bar .nav-bar__link,
-.nav-bar .subnav__link,
-.nav-bar .subnav__heading {
+.nav-bar .sub-nav__link,
+.nav-bar .sub-nav__heading {
   display: block;
+  position: relative;
   margin: 0;
   padding-left: 0.5625em;
   padding-right: 0.5625em;
@@ -159,40 +207,35 @@
   text-align: center;
 }
 
-.nav-bar .subnav__heading {
+.nav-bar .sub-nav__heading {
   color: #fff;
 }
 
-.nav-bar .subnav__link {
+.nav-bar .sub-nav__link {
   color: #fff;
   background-color: #113b4d;
 }
 
 .nav-bar .nav-bar__link:hover,
-.nav-bar .nav-bar__link:active,
-.nav-bar .nav-bar__link [aria-wide="true"] {
+.nav-bar .nav-bar__link:active {
   color: #fff;
-  background-color: #174e66;
   border: 0;
+  text-decoration: none;
 }
 
-.nav-bar .nav-bar__link:focus {
+.nav-bar .sub-nav__link:hover,
+.nav-bar .sub-nav__link:active {
   color: #fff;
-  background-color: #1d6583;
   border: 0;
-  box-shadow: none;
+  text-decoration: none;
 }
 
-.nav-bar .subnav__link:hover,
-.nav-bar .subnav__link:focus,
-.nav-bar .subnav__link:active {
-  color: #fff;
-  background-color: #1b5b76;
-  border: 0;
-  box-shadow: none;
+.nav-bar .nav-bar__link:focus,
+.nav-bar .sub-nav__link:focus {
+  z-index: 2;
 }
 
-.nav-bar .subnav__control {
+.nav-bar .sub-nav__control {
   display: none;
 }
 
@@ -241,14 +284,14 @@
             1. Prevent content from increasing height of element.
         */
   /*
-			This pseudo element helps to cover any subnavs to stop them being visible in the main
+			This pseudo element helps to cover any sub-navs to stop them being visible in the main
 			nav-bar.
 		*/
   /* -- Behaviour: -------------------------------------------------------------------------*/
   /*
-            Set-up slide toggling for subnavs:
+            Set-up slide toggling for sub-navs:
 
-			1. This puts the subnav behind the covering pseudo element. See .nav-bar::before, above.
+			1. This puts the sub-nav behind the covering pseudo element. See .nav-bar::before, above.
             2. OSX/iOS needs this:
 		*/
 }
@@ -278,8 +321,8 @@
 .js-cmr--wide .nav-bar__items,
 .js-cmr--wide .nav-bar__item,
 .js-cmr--wide .nav-bar__item > *,
-.js-cmr--wide .subnav__link,
-.js-cmr--wide .subnav__heading {
+.js-cmr--wide .sub-nav__link,
+.js-cmr--wide .sub-nav__heading {
   display: -ms-flexbox;
   display: flex;
   white-space: nowrap;
@@ -295,7 +338,7 @@
   flex: 1 0 auto;
 }
 
-.js-cmr--wide .subnav__control[data-content]::before {
+.js-cmr--wide .sub-nav__control[data-content]::before {
   content: attr(data-content);
   display: inline;
   vertical-align: top;
@@ -325,25 +368,25 @@
   background-color: #247BA0;
 }
 
-.js-cmr--wide .subnav__heading {
+.js-cmr--wide .sub-nav__heading {
   display: none;
 }
 
-.js-cmr--wide .subnav__control {
+.js-cmr--wide .sub-nav__control {
   display: block;
 }
 
-.js-cmr--wide .subnav__control .icon--is-open,
-.js-cmr--wide .subnav__control[aria-wide="true"] .icon--is-closed {
+.js-cmr--wide .sub-nav__control .icon--is-open,
+.js-cmr--wide .sub-nav__control[aria-wide="true"] .icon--is-closed {
   display: none;
 }
 
-.js-cmr--wide .subnav__control .icon--is-closed,
-.js-cmr--wide .subnav__control[aria-wide="true"] .icon--is-open {
+.js-cmr--wide .sub-nav__control .icon--is-closed,
+.js-cmr--wide .sub-nav__control[aria-wide="true"] .icon--is-open {
   display: inline;
 }
 
-.js-cmr--wide .subnav {
+.js-cmr--wide .sub-nav {
   position: absolute;
   visibility: hidden;
   left: 0;
@@ -353,19 +396,31 @@
   /* 1 */
   height: 2.25em;
   /* 2 */
-  transition: margin-top 0.5s ease, visibility 0s   ease 0.5s;
+  transition: margin-top 0.5s ease, visibility 0s   ease 0.5s;
 }
 
-.js-cmr--wide .subnav__items {
+.js-cmr--wide .sub-nav__items {
   margin: 0;
   padding: 0;
 }
 
-.js-cmr--wide .subnav__control[aria-wide="true"] ~ .subnav {
+.js-cmr--wide .sub-nav__control[aria-wide="true"] ~ .sub-nav {
   visibility: visible;
   margin-top: 2.25em;
   transition: margin-top 0.5s ease;
 }
 
 /* -------------------------------------------------------------------------------------------*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /*
+            In IE the width of some containers gets pushed to 100% instead of natural width, so the
+            CMR breakpoint is mis-calculated. Since the clones are disposabled, I think it should be
+            OK to force them as inline-flex so the calculations are correct:
+        */
+  .nav-bar.js-cmr--clone,
+  .nav-bar.js-cmr--clone > * {
+    display: inline-block !important;
+  }
+}
+
 /* -----------------------------------------------------------------------------------------------*/

@@ -87,7 +87,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             border: 0;
         }
 
-        /* Links and imasge links */
+        /* Links and image links */
         a {
             color: darkslategrey;
         }

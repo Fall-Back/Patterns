@@ -26,6 +26,10 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             Note there's a section that uses attributes to apply styles to specific elements. This
             is so as not to pollute the class space and help authors make distinctions.
             There's a much long essay on this brewing and I'll add the link when it's done.
+            
+            Colour references for ease of search/replace:
+            colour-1: darkslategrey
+            colour-2: silver
         */
 
         /* --| Core styles |--------------------------------------------------------------------- */
@@ -216,18 +220,18 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     <!--[if !IE]><!-->
 
     <style>
-        /* Tiny Fall-Back Styles continued ... */
-
-        /* --| Other stuff |--------------------------------------------------------------------- */
         /*
+            Tiny Fall-Back Styles continued ...
+
             What follows is a mix of markup patterns and attributes to help provide a more
             reasonable fallback - it's unconventional, so leave it out if you like.
         */
 
-        /* Attributes to replicate deprecated HTML styling: */
-
-
-        /* Block styles: */
+        /* --| Block styles |-------------------------------------------------------------------- */
+        [data-fs-block] {
+            display: block;
+        }
+        
         [data-fs-block~="background"] {
             background: silver;
             padding: 1em;
@@ -253,8 +257,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             padding: 1em;
         }
 
+        /* --| Table Layout |-------------------------------------------------------------------- */
         /*
-            Layout: table
             Useful when you have a very small amount of items you want to display side-by-side.
             Like, maybe 2, on the left and right. It doesn't wrap so the items should be small.
             There's reasonable support. Better support would be:
@@ -273,8 +277,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
 
+        /* --| Flex Layout |--------------------------------------------------------------------- */
         /*
-            Layout: flex;
             More responsive and has wrapping, but less well supported than the table layout.
         */
         [data-fs-block~="flex"] {
@@ -296,7 +300,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             flex: 1 1 auto
         }
 
-
+        /* --| Other stuff |--------------------------------------------------------------------- */
+        
         /* Responsive embeds (e.g. YouTube, maps) via http://embedresponsively.com. */
         [data-fs-block="video"] {
             position: relative;

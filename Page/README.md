@@ -58,7 +58,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         mark {
             background: #FF0;
-            color:# 000;
+            color: #000;
         }
 
         template,
@@ -215,6 +215,10 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             white-space: nowrap;
         }
     </style>
+    <!--
+        The above, minified:
+        body,fieldset{padding:1em}fieldset,hr{margin:1em 0}a,hr{color:#2f4f4f}image,img,object,svg,video{max-width:100%;height:auto}pre,table{width:100%}fieldset,table{border:1px solid #2f4f4f}body{font:1em/1.2 sans-serif;margin:0 auto;max-width:50em;word-break:break-word}details,dialog,main,summary{display:block}@supports (list-style-type:disclosure-closed){summary{display:list-item}}mark{background:#ff0;color:#000}[hidden],template{display:none}image,img,object,svg{-ms-interpolation-mode:bicubic;vertical-align:middle;border:0}a img{border:1px solid currentColor}figure{max-width:100%;overflow-x:auto}_:-o-prefocus,:root figure{max-width:initial;overflow-x:visible}hr{border-style:solid;border-width:0 0 1px}pre{overflow-x:scroll;overflow-y:auto}button,input,label,select,textarea{vertical-align:middle;min-height:2.2em;margin:.2em 0}button,input[type=checkbox],input[type=radio],label,select,textarea{cursor:pointer}button,input,textarea{padding:0 .5em;line-height:1.5}table{border-collapse:collapse}table[role=presentation]{border:0;table-layout:fixed}table[role=presentation] td{border:0}th{background:silver}caption,td,th{padding:.5em}[data-fs-text~=right]{text-align:right}[data-fs-text~=center]{text-align:center}[data-fs-text~=larger]{font-size:larger}[data-fs-text~=nowrap]{white-space:nowrap}
+    -->
 
     <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
     <!--[if !IE]><!-->
@@ -327,6 +331,10 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             border-top-width: 10px;
         }
     </style>
+    <!--
+        The above, minified:
+        [data-fs-block]{display:block}[data-fs-block~=background]{background:silver;padding:1em}[data-fs-block=inverted]{background-color:#2f4f4f;padding:1em}[data-fs-block=inverted] *{color:#fff}[data-fs-block~=border]{border:1px solid #2f4f4f;margin:1em 0;padding:1em}[data-fs-block~=padding]{padding:1em}[data-fs-block~=table]{display:table;width:100%;table-layout:fixed}[data-fs-block~=table]>*{display:table-cell;padding:.5em}[data-fs-block~=flex]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}[data-fs-block~=flex]>*{-webkit-box-flex:1;-webkit-flex:1 1 auto;-moz-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}[data-fs-block=video]{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}[data-fs-block=video] embed,[data-fs-block=video] iframe,[data-fs-block=video] object{position:absolute;top:0;left:0;width:100%;height:100%}[data-fs-hr=larger]{border-top-width:10px}
+    -->
 
     <!--
         Accessible font loading. FOUT is a lesser evil than FOIT.

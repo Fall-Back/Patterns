@@ -88,11 +88,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
         /* Links and image links */
-        a {
+        a[href] {
             color: darkslategrey;
         }
 
-        a img {
+        a[href] img {
             border: 1px solid currentColor;
         }
 
@@ -217,7 +217,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     </style>
     <!--
         The above, minified:
-        body,fieldset{padding:1em}fieldset,hr{margin:1em 0}a,hr{color:#2f4f4f}image,img,object,svg,video{max-width:100%;height:auto}pre,table{width:100%}fieldset,table{border:1px solid #2f4f4f}body{font:1em/1.2 sans-serif;margin:0 auto;max-width:50em;word-break:break-word}details,dialog,main,summary{display:block}@supports (list-style-type:disclosure-closed){summary{display:list-item}}mark{background:#ff0;color:#000}[hidden],template{display:none}image,img,object,svg{-ms-interpolation-mode:bicubic;vertical-align:middle;border:0}a img{border:1px solid currentColor}figure{max-width:100%;overflow-x:auto}_:-o-prefocus,:root figure{max-width:initial;overflow-x:visible}hr{border-style:solid;border-width:0 0 1px}pre{overflow-x:scroll;overflow-y:auto}button,input,label,select,textarea{vertical-align:middle;min-height:2.2em;margin:.2em 0}button,input[type=checkbox],input[type=radio],label,select,textarea{cursor:pointer}button,input,textarea{padding:0 .5em;line-height:1.5}table{border-collapse:collapse}table[role=presentation]{border:0;table-layout:fixed}table[role=presentation] td{border:0}th{background:silver}caption,td,th{padding:.5em}[data-fs-text~=right]{text-align:right}[data-fs-text~=center]{text-align:center}[data-fs-text~=larger]{font-size:larger}[data-fs-text~=nowrap]{white-space:nowrap}
+        body,fieldset{padding:1em}fieldset,hr{margin:1em 0}a[href],hr{color:#2f4f4f}image,img,object,svg,video{max-width:100%;height:auto}pre,table{width:100%}fieldset,table{border:1px solid #2f4f4f}body{font:1em/1.2 sans-serif;margin:0 auto;max-width:50em;word-break:break-word}details,dialog,main,summary{display:block}@supports (list-style-type:disclosure-closed){summary{display:list-item}}mark{background:#ff0;color:#000}[hidden],template{display:none}image,img,object,svg{-ms-interpolation-mode:bicubic;vertical-align:middle;border:0}a[href] img{border:1px solid currentColor}figure{max-width:100%;overflow-x:auto}_:-o-prefocus,:root figure{max-width:initial;overflow-x:visible}hr{border-style:solid;border-width:0 0 1px}pre{overflow-x:scroll;overflow-y:auto}button,input,label,select,textarea{vertical-align:middle;min-height:2.2em;margin:.2em 0}button,input[type=checkbox],input[type=radio],label,select,textarea{cursor:pointer}button,input,textarea{padding:0 .5em;line-height:1.5}table{border-collapse:collapse}table[role=presentation]{border:0;table-layout:fixed}table[role=presentation] td{border:0}th{background:silver}caption,td,th{padding:.5em}[data-fs-text~=right]{text-align:right}[data-fs-text~=center]{text-align:center}[data-fs-text~=larger]{font-size:larger}[data-fs-text~=nowrap]{white-space:nowrap}
     -->
 
     <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->

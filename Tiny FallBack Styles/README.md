@@ -31,19 +31,325 @@ Currently it's this:
 
 ```
     <style>
-        /* Tiny Fall-Back Styles (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md) */
-        body{font-family:sans-serif;line-height:1.2;padding:1em;margin:0 auto;max-width:50em;}
-        img{max-width:100%;-ms-interpolation-mode:bicubic;}
-        [hidden]{display:none;}
-        main{display:block;}
-        hr{border-top:1px solid;border-bottom:0 none;height:0px;}
-        fieldset{border:1px solid;}
-        pre{overflow-x:scroll;overflow-y:auto;}
-        button,input,select,textarea{vertical-align:middle;}
+        /*
+            Tiny Fall-Back Styles (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md)
+
+            The following styles provide a better visual experience in cases where linked
+            stylesheets aren't loaded for any reason. It's recommended that any styles that won't
+            be used by the elements on the page be removed to make this as lean as possible, and
+            the run through a minifier (e.g. https://cssminifier.com) to compress it as much a
+            possible, since this is sent on each request and not cached.
+            Note there's a section that uses attributes to apply styles to specific elements. This
+            is so as not to pollute the class space and help authors make distinctions.
+            There's a much long essay on this brewing and I'll add the link when it's done.
+            
+            Colour references for ease of search/replace:
+            colour-1: darkslategrey
+            colour-2: silver
+        */
+
+        /* --| Core styles |--------------------------------------------------------------------- */
+        body {
+            font: 1em/1.2 sans-serif;
+            padding: 1em;
+            margin: 0 auto;
+            max-width: 50em;
+
+            word-break: break-word;
+        }
+
+        /* For older browsers:(see https://github.com/aFarkas/html5shiv) */
+        dialog,
+        details,
+        main,
+        summary {
+            display: block;
+        }
+
+        @supports (list-style-type: disclosure-closed) {
+            summary {
+                display: list-item;
+            }
+        }
+
+        mark {
+            background: #FF0;
+            color: #000;
+        }
+
+        template,
+        [hidden] {
+            display: none;
+        }
+
+        /* The "older browser" message makes use of a fieldset to add a border no matter what: */
+        fieldset {
+            border: 1px solid;
+            border-color: darkslategrey;
+            margin: 1em 0;
+            padding: 1em;
+        }
+
+        /* More responsive images: */
+        /* Note ancient image tag is actually for the SVG FalBack PNG method */
+        img,
+        image,
+        object,
+        svg {
+            max-width: 100%;
+            -ms-interpolation-mode: bicubic;
+            vertical-align: middle;
+            height: auto;
+            border: 0;
+        }
+
+        /* Links and image links */
+        a[href] {
+            color: darkslategrey;
+        }
+
+        a[href] img {
+            border: 1px solid currentColor;
+        }
+
+        /*
+            Putting things like tables in figures makes sense and allows them to become scrollable
+            if they're too wide.
+        */
+        figure {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        /*
+            BUT! Opera Mini doesn't support scrolling areas so hacking it out for that browser:
+        */
+        _:-o-prefocus, :root figure {
+            max-width: initial;
+            overflow-x: visible;
+        }
+
+        hr {
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            margin: 1em 0;
+            color: darkslategrey;
+        }
+
+        pre {
+            width: 100%;
+            overflow-x: scroll;
+            overflow-y: auto;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        /* --| Form styles |--------------------------------------------------------------------- */
+        /* If you're using forms, keep this: */
+
+        button,
+        input,
+        label,
+        select,
+        textarea {
+            vertical-align: middle;
+            vertical-align: middle;
+            min-height: 2.2em;
+            margin: 0.2em 0;
+        }
+
+        button,
+        input[type="checkbox"],
+        input[type="radio"],
+        label,
+        select,
+        textarea {
+            cursor: pointer;
+        }
+
+        button,
+        input,
+        textarea {
+            padding: 0 0.5em;
+            line-height: 1.5;
+        }
+
+
+        /* --| Table styles |-------------------------------------------------------------------- */
+        /* If you're using tables, keep this: */
+
+        table {
+            width: 100%;
+            border: 1px solid darkslategrey;
+            border-collapse: collapse;
+        }
+
+        table[role="presentation"] {
+            border: 0;
+            table-layout: fixed;
+        }
+
+        table[role="presentation"] td {
+            border: 0;
+        }
+
+        th {
+            background: silver;
+        }
+
+        caption, td, th {
+            padding: 0.5em;
+        }
+        
+        /*
+            What follows is a mix of markup patterns and attributes to help provide a more
+            reasonable fallback - it's unconventional, so leave it out if you like.
+        */
+
+        /* Attributes to replicate deprecated HTML styling: */
+
+        /* Would have been align="right": */
+        [data-fs-text~="right"] {
+            text-align: right;
+        }
+
+        /* Would have been align="center": */
+        [data-fs-text~="center"] {
+            text-align: center;
+        }
+
+        /* Would have been the 'big' element: */
+        [data-fs-text~="larger"] {
+            font-size: larger;
+        }
+
+        [data-fs-text~="nowrap"] {
+            white-space: nowrap;
+        }
 
         /* For YouTube via http://embedresponsively.com. May or may not be needed. */
         .embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;} .embed-container iframe, .embed-container object, .embed-container embed{position:absolute;top 0;left:0;width:100%;height:100%;}
     </style>
+    
+    <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
+    <!--[if !IE]><!-->
+
+    <style>
+        /*
+            Tiny Fall-Back Styles continued ...
+
+            What follows is a mix of markup patterns and attributes to help provide a more
+            reasonable fallback - it's unconventional, so leave it out if you like.
+        */
+
+        /* --| Block styles |-------------------------------------------------------------------- */
+        [data-fs-block] {
+            display: block;
+        }
+        
+        [data-fs-block~="background"] {
+            background: silver;
+            padding: 1em;
+        }
+
+        [data-fs-block="inverted"]  {
+            background-color: darkslategrey;
+            padding: 1em;
+        }
+
+        [data-fs-block="inverted"] * {
+            color: #fff;
+
+        }
+
+        [data-fs-block~="border"] {
+            border: 1px solid darkslategrey;
+            margin: 1em 0;
+            padding: 1em;
+        }
+
+        [data-fs-block~="padding"] {
+            padding: 1em;
+        }
+
+        /* --| Table Layout |-------------------------------------------------------------------- */
+        /*
+            Useful when you have a very small amount of items you want to display side-by-side.
+            Like, maybe 2, on the left and right. It doesn't wrap so the items should be small.
+            There's reasonable support. Better support would be:
+            `<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">`
+            But we're not supposed to use deprecated 'presentational' elements and attributes.
+        */
+        [data-fs-block~="table"] {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        [data-fs-block~="table"] > * {
+            display: table-cell;
+            padding: 0.5em;
+        }
+
+
+        /* --| Flex Layout |--------------------------------------------------------------------- */
+        /*
+            More responsive and has wrapping, but less well supported than the table layout.
+        */
+        [data-fs-block~="flex"] {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        [data-fs-block~="flex"] > * {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 1 auto;
+            -moz-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto
+        }
+
+        /* --| Other stuff |--------------------------------------------------------------------- */
+        
+        /* Responsive embeds (e.g. YouTube, maps) via http://embedresponsively.com. */
+        [data-fs-block="video"] {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        [data-fs-block="video"] iframe,
+        [data-fs-block="video"] object,
+        [data-fs-block="video"] embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* Horizontal rules: */
+        [data-fs-hr="larger"] {
+            border-top-width: 10px;
+        }
+    </style>
+    
+    ...
+    
+    <!--<![endif]-->
 ```
 
 The objective here is to make things cleaner, more legible and more responsive.
@@ -51,7 +357,7 @@ The objective here is to make things cleaner, more legible and more responsive.
 * `body` - here we set a sans-serif font, bump the line height, give it some space and a max-w9dth to prevent super-long lines of text on wider screens.
 * `img` - prevent images form breaking out of the viewport, plus a really old IE thing to stop them looking terrible.
 * `[hidden]` - older browsers don't support this, with this they do.
-* `main` - for older, non-supporting browsers where it would default to `inline`. I should probably add the other newer elements, but so far I havn't needed to.
+* `main` - for older, non-supporting browsers where it would default to `inline`. I should probably add the other newer elements, but so far I haven't needed to.
 * `hr` - I use these a lot because they make good visual separators in Failed/No CSS scenarios, so make them look tidier.
 * `fieldset` - tidy the border for these.
 * `pre` - make these behave better by default.
@@ -66,7 +372,7 @@ User Agent 'Tricks'
 
 [Examples](https://fall-back.github.io/test/tfs-not-allowed.html)
 
-Using `<fieldset>` around things can go a long way to help break up content, especially on a long page. Wwe can add `role="presentation"` to avoid any accessibility (a11y) issues (though I've never encountered any issues if it's absent).
+Using `<fieldset>` around things can go a long way to help break up content, especially on a long page. We can add `role="presentation"` to avoid any accessibility (a11y) issues (though I've never encountered any issues if it's absent).
 This gives us:
 
 1.

@@ -54,8 +54,6 @@ Currently it's this:
             padding: 1em;
             margin: 0 auto;
             max-width: 50em;
-
-            word-break: break-word;
         }
 
         /* For older browsers:(see https://github.com/aFarkas/html5shiv) */

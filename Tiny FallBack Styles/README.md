@@ -30,6 +30,8 @@ The TFS is designed to be as small as possible and live in the `<head>` of a pag
 Currently it's this:
 
 ```
+    <!-- Ultra-light fallback styles for ancient browsers: -->
+    <meta id="css_has_loaded">
     <style>
         /*
             Tiny Fall-Back Styles (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md)
@@ -42,18 +44,23 @@ Currently it's this:
             Note there's a section that uses attributes to apply styles to specific elements. This
             is so as not to pollute the class space and help authors make distinctions.
             There's a much long essay on this brewing and I'll add the link when it's done.
-            
+
             Colour references for ease of search/replace:
             colour-1: darkslategrey
             colour-2: silver
         */
 
         /* --| Core styles |--------------------------------------------------------------------- */
+        html {
+            background: darkslategrey;
+        }
+
         body {
             font: 1em/1.2 sans-serif;
-            padding: 1em;
+            padding: 2em;
             margin: 0 auto;
             max-width: 50em;
+            background: #fff;
         }
 
         /* For older browsers:(see https://github.com/aFarkas/html5shiv) */
@@ -83,7 +90,7 @@ Currently it's this:
         /* The "older browser" message makes use of a fieldset to add a border no matter what: */
         fieldset {
             border: 1px solid;
-            border-color: darkslategrey;
+            border-color: currentColor;
             margin: 1em 0;
             padding: 1em;
         }
@@ -103,11 +110,16 @@ Currently it's this:
 
         /* Links and image links */
         a[href] {
-            color: darkslategrey;
+            color: inherit;
+        }
+
+        a[href]:hover {
+            text-decoration: none;
         }
 
         a[href] img {
-            border: 1px solid currentColor;
+            padding: 0.3em;
+            margin: 0.2em;
         }
 
         /*
@@ -131,7 +143,7 @@ Currently it's this:
             border-style: solid;
             border-width: 0 0 1px 0;
             margin: 1em 0;
-            color: darkslategrey;
+            color: currentColor;
         }
 
         pre {
@@ -149,6 +161,11 @@ Currently it's this:
         /* --| Form styles |--------------------------------------------------------------------- */
         /* If you're using forms, keep this: */
 
+        button {
+            background-color: lightslategray;
+            color: #fff;
+        }
+
         button,
         input,
         label,
@@ -164,8 +181,7 @@ Currently it's this:
         input[type="checkbox"],
         input[type="radio"],
         label,
-        select,
-        textarea {
+        select {
             cursor: pointer;
         }
 
@@ -182,7 +198,7 @@ Currently it's this:
 
         table {
             width: 100%;
-            border: 1px solid darkslategrey;
+            border: 1px solid currentColor;
             border-collapse: collapse;
         }
 
@@ -202,7 +218,7 @@ Currently it's this:
         caption, td, th {
             padding: 0.5em;
         }
-        
+
         /*
             What follows is a mix of markup patterns and attributes to help provide a more
             reasonable fallback - it's unconventional, so leave it out if you like.
@@ -228,8 +244,13 @@ Currently it's this:
         [data-fs-text~="nowrap"] {
             white-space: nowrap;
         }
-
-        /* For YouTube via http://embedresponsively.com. May or may not be needed. */
+    </style>
+    <!--
+        The above, minified:
+        fieldset,hr{margin:1em 0}image,img,object,svg,video{max-width:100%;height:auto}pre,table{width:100%}html{background:#2f4f4f}body{font:1em/1.2 sans-serif;padding:2em;margin:0 auto;max-width:50em;background:#fff}details,dialog,main,summary{display:block}@supports (list-style-type:disclosure-closed){summary{display:list-item}}mark{background:#ff0;color:#000}[hidden],template{display:none}fieldset{border:1px solid currentColor;padding:1em}image,img,object,svg{-ms-interpolation-mode:bicubic;vertical-align:middle;border:0}a[href]{color:inherit}a[href]:hover{text-decoration:none}a[href] img{padding:.3em;margin:.2em}figure{max-width:100%;overflow-x:auto}_:-o-prefocus,:root figure{max-width:initial;overflow-x:visible}hr{border-style:solid;border-width:0 0 1px;color:currentColor}pre{overflow-x:scroll;overflow-y:auto}button{background-color:#778899;color:#fff}button,input,label,select,textarea{vertical-align:middle;min-height:2.2em;margin:.2em 0}button,input[type=checkbox],input[type=radio],label,select{cursor:pointer}button,input,textarea{padding:0 .5em;line-height:1.5}table{border:1px solid currentColor;border-collapse:collapse}table[role=presentation]{border:0;table-layout:fixed}table[role=presentation] td{border:0}th{background:silver}caption,td,th{padding:.5em}[data-fs-text~=right]{text-align:right}[data-fs-text~=center]{text-align:center}[data-fs-text~=larger]{font-size:larger}[data-fs-text~=nowrap]{white-space:nowrap}
+    -->
+    <style>
+        /* Optional - for YouTube via http://embedresponsively.com. */
         .embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;} .embed-container iframe, .embed-container object, .embed-container embed{position:absolute;top 0;left:0;width:100%;height:100%;}
     </style>
     
@@ -248,20 +269,26 @@ Currently it's this:
         [data-fs-block] {
             display: block;
         }
-        
+
         [data-fs-block~="background"] {
             background: silver;
             padding: 1em;
         }
 
-        [data-fs-block="inverted"]  {
+        [data-fs-block~="inverted"]  {
             background-color: darkslategrey;
             padding: 1em;
         }
 
-        [data-fs-block="inverted"] * {
+        [data-fs-block~="inverted"] * {
             color: #fff;
+        }
 
+
+        [data-fs-block~="inverted"] img {
+            background: #fff;
+            padding: 0.5em;
+            border: 0;
         }
 
         [data-fs-block~="border"] {
@@ -270,8 +297,21 @@ Currently it's this:
             padding: 1em;
         }
 
+        [data-fs-block~="rounded"] {
+            border-radius: 1em;
+        }
+
         [data-fs-block~="padding"] {
             padding: 1em;
+        }
+
+        [data-fs-block~=flush]{
+            margin-left: -2em;
+            margin-right: -2em;
+        }
+
+        [data-fs-block~=flush]:last-child{
+            margin-bottom: -2em;
         }
 
         /* --| Table Layout |-------------------------------------------------------------------- */
@@ -318,7 +358,7 @@ Currently it's this:
         }
 
         /* --| Other stuff |--------------------------------------------------------------------- */
-        
+
         /* Responsive embeds (e.g. YouTube, maps) via http://embedresponsively.com. */
         [data-fs-block="video"] {
             position: relative;
@@ -344,6 +384,10 @@ Currently it's this:
             border-top-width: 10px;
         }
     </style>
+    <!--
+        The above, minified:
+        [data-fs-block]{display:block}[data-fs-block~=background]{background:silver;padding:1em}[data-fs-block~=inverted]{background-color:#2f4f4f;padding:1em}[data-fs-block~=inverted] *{color:#fff}[data-fs-block~=inverted] img{background:#fff;padding:.5em;border:0}[data-fs-block~=border]{border:1px solid #2f4f4f;margin:1em 0;padding:1em}[data-fs-block~=rounded]{border-radius:1em}[data-fs-block~=padding]{padding:1em}[data-fs-block~=flush]{margin-left:-2em;margin-right:-2em}[data-fs-block~=flush]:last-child{margin-bottom:-2em}[data-fs-block~=table]{display:table;width:100%;table-layout:fixed}[data-fs-block~=table]>*{display:table-cell;padding:.5em}[data-fs-block~=flex]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}[data-fs-block~=flex]>*{-webkit-box-flex:1;-webkit-flex:1 1 auto;-moz-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}[data-fs-block=video]{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}[data-fs-block=video] embed,[data-fs-block=video] iframe,[data-fs-block=video] object{position:absolute;top:0;left:0;width:100%;height:100%}[data-fs-hr=larger]{border-top-width:10px}
+    -->
     
     ...
     

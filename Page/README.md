@@ -5,7 +5,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
 ```
 <!doctype html>
-<html class="no-js" lang="en-gb">
+<html class="no-js" lang="en-gb" id="page-id">
 <head>
     <meta charset="utf-8" />
     <title>Page Title | Site Name</title>
@@ -26,18 +26,23 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             Note there's a section that uses attributes to apply styles to specific elements. This
             is so as not to pollute the class space and help authors make distinctions.
             There's a much long essay on this brewing and I'll add the link when it's done.
-            
+
             Colour references for ease of search/replace:
             colour-1: darkslategrey
             colour-2: silver
         */
 
         /* --| Core styles |--------------------------------------------------------------------- */
+        html {
+            background: darkslategrey;
+        }
+
         body {
             font: 1em/1.2 sans-serif;
-            padding: 1em;
+            padding: 2em;
             margin: 0 auto;
             max-width: 50em;
+            background: #fff;
         }
 
         /* For older browsers:(see https://github.com/aFarkas/html5shiv) */
@@ -67,7 +72,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         /* The "older browser" message makes use of a fieldset to add a border no matter what: */
         fieldset {
             border: 1px solid;
-            border-color: darkslategrey;
+            border-color: currentColor;
             margin: 1em 0;
             padding: 1em;
         }
@@ -87,11 +92,16 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         /* Links and image links */
         a[href] {
-            color: darkslategrey;
+            color: inherit;
+        }
+
+        a[href]:hover {
+            text-decoration: none;
         }
 
         a[href] img {
-            border: 1px solid currentColor;
+            padding: 0.3em;
+            margin: 0.2em;
         }
 
         /*
@@ -115,7 +125,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             border-style: solid;
             border-width: 0 0 1px 0;
             margin: 1em 0;
-            color: darkslategrey;
+            color: currentColor;
         }
 
         pre {
@@ -133,6 +143,11 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         /* --| Form styles |--------------------------------------------------------------------- */
         /* If you're using forms, keep this: */
 
+        button {
+            background-color: lightslategray;
+            color: #fff;
+        }
+
         button,
         input,
         label,
@@ -148,8 +163,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         input[type="checkbox"],
         input[type="radio"],
         label,
-        select,
-        textarea {
+        select {
             cursor: pointer;
         }
 
@@ -166,7 +180,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
         table {
             width: 100%;
-            border: 1px solid darkslategrey;
+            border: 1px solid currentColor;
             border-collapse: collapse;
         }
 
@@ -186,7 +200,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         caption, td, th {
             padding: 0.5em;
         }
-        
+
         /*
             What follows is a mix of markup patterns and attributes to help provide a more
             reasonable fallback - it's unconventional, so leave it out if you like.
@@ -214,8 +228,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
     </style>
     <!--
-        The above, minified:
-        body,fieldset{padding:1em}fieldset,hr{margin:1em 0}a[href],hr{color:#2f4f4f}image,img,object,svg,video{max-width:100%;height:auto}pre,table{width:100%}fieldset,table{border:1px solid #2f4f4f}body{font:1em/1.2 sans-serif;margin:0 auto;max-width:50em;}details,dialog,main,summary{display:block}@supports (list-style-type:disclosure-closed){summary{display:list-item}}mark{background:#ff0;color:#000}[hidden],template{display:none}image,img,object,svg{-ms-interpolation-mode:bicubic;vertical-align:middle;border:0}a[href] img{border:1px solid currentColor}figure{max-width:100%;overflow-x:auto}_:-o-prefocus,:root figure{max-width:initial;overflow-x:visible}hr{border-style:solid;border-width:0 0 1px}pre{overflow-x:scroll;overflow-y:auto}button,input,label,select,textarea{vertical-align:middle;min-height:2.2em;margin:.2em 0}button,input[type=checkbox],input[type=radio],label,select,textarea{cursor:pointer}button,input,textarea{padding:0 .5em;line-height:1.5}table{border-collapse:collapse}table[role=presentation]{border:0;table-layout:fixed}table[role=presentation] td{border:0}th{background:silver}caption,td,th{padding:.5em}[data-fs-text~=right]{text-align:right}[data-fs-text~=center]{text-align:center}[data-fs-text~=larger]{font-size:larger}[data-fs-text~=nowrap]{white-space:nowrap}
+        fieldset,hr{margin:1em 0}image,img,object,svg,video{max-width:100%;height:auto}pre,table{width:100%}html{background:#2f4f4f}body{font:1em/1.2 sans-serif;padding:2em;margin:0 auto;max-width:50em;background:#fff}details,dialog,main,summary{display:block}@supports (list-style-type:disclosure-closed){summary{display:list-item}}mark{background:#ff0;color:#000}[hidden],template{display:none}fieldset{border:1px solid currentColor;padding:1em}image,img,object,svg{-ms-interpolation-mode:bicubic;vertical-align:middle;border:0}a[href]{color:inherit}a[href]:hover{text-decoration:none}a[href] img{padding:.3em;margin:.2em}figure{max-width:100%;overflow-x:auto}_:-o-prefocus,:root figure{max-width:initial;overflow-x:visible}hr{border-style:solid;border-width:0 0 1px;color:currentColor}pre{overflow-x:scroll;overflow-y:auto}button{background-color:#778899;color:#fff}button,input,label,select,textarea{vertical-align:middle;min-height:2.2em;margin:.2em 0}button,input[type=checkbox],input[type=radio],label,select{cursor:pointer}button,input,textarea{padding:0 .5em;line-height:1.5}table{border:1px solid currentColor;border-collapse:collapse}table[role=presentation]{border:0;table-layout:fixed}table[role=presentation] td{border:0}th{background:silver}caption,td,th{padding:.5em}[data-fs-text~=right]{text-align:right}[data-fs-text~=center]{text-align:center}[data-fs-text~=larger]{font-size:larger}[data-fs-text~=nowrap]{white-space:nowrap}
     -->
 
     <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
@@ -233,20 +246,26 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         [data-fs-block] {
             display: block;
         }
-        
+
         [data-fs-block~="background"] {
             background: silver;
             padding: 1em;
         }
 
-        [data-fs-block="inverted"]  {
+        [data-fs-block~="inverted"]  {
             background-color: darkslategrey;
             padding: 1em;
         }
 
-        [data-fs-block="inverted"] * {
+        [data-fs-block~="inverted"] * {
             color: #fff;
+        }
 
+
+        [data-fs-block~="inverted"] img {
+            background: #fff;
+            padding: 0.5em;
+            border: 0;
         }
 
         [data-fs-block~="border"] {
@@ -255,8 +274,21 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
             padding: 1em;
         }
 
+        [data-fs-block~="rounded"] {
+            border-radius: 1em;
+        }
+
         [data-fs-block~="padding"] {
             padding: 1em;
+        }
+
+        [data-fs-block~=flush]{
+            margin-left: -2em;
+            margin-right: -2em;
+        }
+
+        [data-fs-block~=flush]:last-child{
+            margin-bottom: -2em;
         }
 
         /* --| Table Layout |-------------------------------------------------------------------- */
@@ -303,7 +335,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         }
 
         /* --| Other stuff |--------------------------------------------------------------------- */
-        
+
         /* Responsive embeds (e.g. YouTube, maps) via http://embedresponsively.com. */
         [data-fs-block="video"] {
             position: relative;
@@ -331,7 +363,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     </style>
     <!--
         The above, minified:
-        [data-fs-block]{display:block}[data-fs-block~=background]{background:silver;padding:1em}[data-fs-block=inverted]{background-color:#2f4f4f;padding:1em}[data-fs-block=inverted] *{color:#fff}[data-fs-block~=border]{border:1px solid #2f4f4f;margin:1em 0;padding:1em}[data-fs-block~=padding]{padding:1em}[data-fs-block~=table]{display:table;width:100%;table-layout:fixed}[data-fs-block~=table]>*{display:table-cell;padding:.5em}[data-fs-block~=flex]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}[data-fs-block~=flex]>*{-webkit-box-flex:1;-webkit-flex:1 1 auto;-moz-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}[data-fs-block=video]{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}[data-fs-block=video] embed,[data-fs-block=video] iframe,[data-fs-block=video] object{position:absolute;top:0;left:0;width:100%;height:100%}[data-fs-hr=larger]{border-top-width:10px}
+        [data-fs-block]{display:block}[data-fs-block~=background]{background:silver;padding:1em}[data-fs-block~=inverted]{background-color:#2f4f4f;padding:1em}[data-fs-block~=inverted] *{color:#fff}[data-fs-block~=inverted] img{background:#fff;padding:.5em;border:0}[data-fs-block~=border]{border:1px solid #2f4f4f;margin:1em 0;padding:1em}[data-fs-block~=rounded]{border-radius:1em}[data-fs-block~=padding]{padding:1em}[data-fs-block~=flush]{margin-left:-2em;margin-right:-2em}[data-fs-block~=flush]:last-child{margin-bottom:-2em}[data-fs-block~=table]{display:table;width:100%;table-layout:fixed}[data-fs-block~=table]>*{display:table-cell;padding:.5em}[data-fs-block~=flex]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}[data-fs-block~=flex]>*{-webkit-box-flex:1;-webkit-flex:1 1 auto;-moz-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}[data-fs-block=video]{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}[data-fs-block=video] embed,[data-fs-block=video] iframe,[data-fs-block=video] object{position:absolute;top:0;left:0;width:100%;height:100%}[data-fs-hr=larger]{border-top-width:10px}
     -->
 
     <!--
@@ -361,7 +393,52 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 
     <!--<![endif]-->
 </head>
-<body>
+<body id="top">
+
+    <!-- A few select Feather Icons (https://feathericons.com/). Edit as needed. -->
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+        <style>
+            i &gt; svg:only-child,
+            .icon {
+                fill: none;
+                fill-opacity: 0;
+                stroke: currentColor;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                width: 1.25em;
+                height: 1.25em;
+                margin: 0;
+                padding: 0;
+                vertical-align: text-bottom;
+            }
+        </style>
+        <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </symbol>
+        <symbol id="icon-chevron-up" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </symbol>
+        <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </symbol>
+        <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </symbol>
+        <symbol id="icon-cross" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24" fill="none" fill-opacity="0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+            <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+        </symbol>
+    </svg>
 
     <div data-if-css="hide">
         <fieldset role="presentation">
@@ -375,6 +452,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         <nav aria-label="primary">
             ...
         </nav>
+        <hr>
     </header>
 
     <main id="main">
@@ -384,8 +462,9 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
     </main>
 
     <footer aria-label="Page">
+        <hr>
         <p>
-            <a href="#">Top</a>
+            <a href="#top">Top</a>
         </p>
     </footer>
 </body>

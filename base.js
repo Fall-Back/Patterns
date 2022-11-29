@@ -77,6 +77,9 @@ var $flbk = {};
 
     $flbk.u.css_rule_applied = function(selector, property, value) {
         var el = document.querySelector(selector);
+        if (!el) {
+            return false;
+        }
         var style = window.getComputedStyle(el);
         if (property in style) {
             if (style[property] == value) {
@@ -85,8 +88,8 @@ var $flbk = {};
         }
         return false;
     };
-    
-    
+
+
     $flbk.u.debounce = function(func, wait, immediate) {
         var timeout;
         return function() {
@@ -106,8 +109,8 @@ var $flbk = {};
             }
         };
     }
-    
-    
+
+
     $flbk.u.ready = function(fn) {
         if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
             fn();
@@ -115,8 +118,8 @@ var $flbk = {};
             document.addEventListener('DOMContentLoaded', fn);
         }
     };
-    
-    
+
+
     $flbk.u.set_style = function(element, style) {
         Object.keys(style).forEach(function(key) {
             var val = style[key];
@@ -129,8 +132,8 @@ var $flbk = {};
         });
     }
 
-    
-    
+
+
 
     $flbk.s.debug = true;
     //$flbk.s.debug = false;

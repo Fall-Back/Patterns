@@ -247,6 +247,8 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         /* --| Block styles |-------------------------------------------------------------------- */
         [data-fs-block] {
             display: block;
+            margin-left: 0;
+            margin-right: 0;
         }
 
         [data-fs-block~="background"] {

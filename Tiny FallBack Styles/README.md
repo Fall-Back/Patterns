@@ -253,7 +253,7 @@ Currently it's this:
         /* Optional - for YouTube via http://embedresponsively.com. */
         .embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;} .embed-container iframe, .embed-container object, .embed-container embed{position:absolute;top 0;left:0;width:100%;height:100%;}
     </style>
-    
+
     <!-- From here we're cutting off IE9- to stop all kinds of JS and CSS fails. -->
     <!--[if !IE]><!-->
 
@@ -268,6 +268,8 @@ Currently it's this:
         /* --| Block styles |-------------------------------------------------------------------- */
         [data-fs-block] {
             display: block;
+            margin-left: 0;
+            margin-right: 0;
         }
 
         [data-fs-block~="background"] {
@@ -388,9 +390,9 @@ Currently it's this:
         The above, minified:
         [data-fs-block]{display:block}[data-fs-block~=background]{background:silver;padding:1em}[data-fs-block~=inverted]{background-color:#2f4f4f;padding:1em}[data-fs-block~=inverted] *{color:#fff}[data-fs-block~=inverted] img{background:#fff;padding:.5em;border:0}[data-fs-block~=border]{border:1px solid #2f4f4f;margin:1em 0;padding:1em}[data-fs-block~=rounded]{border-radius:1em}[data-fs-block~=padding]{padding:1em}[data-fs-block~=flush]{margin-left:-2em;margin-right:-2em}[data-fs-block~=flush]:last-child{margin-bottom:-2em}[data-fs-block~=table]{display:table;width:100%;table-layout:fixed}[data-fs-block~=table]>*{display:table-cell;padding:.5em}[data-fs-block~=flex]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}[data-fs-block~=flex]>*{-webkit-box-flex:1;-webkit-flex:1 1 auto;-moz-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}[data-fs-block=video]{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}[data-fs-block=video] embed,[data-fs-block=video] iframe,[data-fs-block=video] object{position:absolute;top:0;left:0;width:100%;height:100%}[data-fs-hr=larger]{border-top-width:10px}
     -->
-    
+
     ...
-    
+
     <!--<![endif]-->
 ```
 

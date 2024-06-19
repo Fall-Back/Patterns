@@ -7,14 +7,14 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
 <!doctype html>
 <html class="no-js" lang="en-gb" id="page-id">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Page Title | Site Name</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Ultra-light fallback styles for ancient browsers: -->
-    <meta id="css_has_loaded">
+    <meta id="css_has_loaded" name="fallback" content="">
     <style>
         /*
             Tiny Fall-Back Styles (https://github.com/Fall-Back/Patterns/edit/master/Page/README.md)
@@ -374,7 +374,7 @@ Partly adapted from 'Inclusive Design Patterns' by Heydon Pickering [p43],  Page
         Accessible font loading. FOUT is a lesser evil than FOIT.
         (https://keithclark.co.uk/articles/loading-css-without-blocking-render/)
     -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet" media="not all" onload="if(media!='all')media='all'">
 
     <!--
         M3 Mustard Cut
